@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
+import { Button, Row, Col} from 'antd';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
         <div className="App">
+            <Row>
+                <Col span={12}>col-12</Col>
+                <Col span={12}>col-12</Col>
+            </Row>
           <Button type="primary">Button</Button>
         </div>
     );
