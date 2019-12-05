@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Clubs() {
+//props.clubs - Список клубов
+function Clubs(props) {
     return (
         <h1>Clubs</h1>
     );

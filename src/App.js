@@ -35,7 +35,7 @@ function App() {
                     <Router>
                         <Switch>
                             <Route exact path="/" >
-                                <Clubs/>
+                                <Clubs clubs={data.clubs}/>
                             </Route>
                             <Route path="/event">
                                 <Event/>
