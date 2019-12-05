@@ -4,6 +4,7 @@ import './App.css';
 import {YMaps, Map} from 'react-yandex-maps';
 import {
     BrowserRouter as Router,
+    Switch,
     Route,
 } from "react-router-dom";
 
@@ -22,12 +23,14 @@ function App() {
                 </Col>
                 <Col span={12}>
                     <Router>
-                        <Route path="/">
-                            <Clubs/>
-                        </Route>
-                        <Route path="/event">
-                            <Event />
-                        </Route>
+                        <Switch>
+                            <Route path="/" >
+                                <Clubs/>
+                            </Route>
+                            <Route path="/event">
+                                <Event/>
+                            </Route>
+                        </Switch>
                     </Router>
                 </Col>
             </Row>
