@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Clubs from './pages/clubs/index'
+import Event from './pages/event/index'
 
 function App() {
     return (
@@ -23,6 +24,9 @@ function App() {
                     <Router>
                         <Route path="/">
                             <Clubs/>
+                        </Route>
+                        <Route path="/event">
+                            <Event />
                         </Route>
                     </Router>
                 </Col>
