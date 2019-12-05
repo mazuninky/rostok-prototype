@@ -24,7 +24,7 @@ function App() {
                 <Col span={12}>
                     <Router>
                         <Switch>
-                            <Route path="/" >
+                            <Route exact path="/" >
                                 <Clubs/>
                             </Route>
                             <Route path="/event">
