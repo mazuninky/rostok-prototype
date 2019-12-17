@@ -18,3 +18,15 @@
   justify-content: space-between;
   height: 100vh;
 }
+
+.m-1 {
+  margin: 4px;
+}
+
+.mt-1 {
+  margin-top: 4px;
+}
+
+.p-1 {
+  padding: 4px;
+}
