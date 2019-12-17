@@ -15,9 +15,13 @@ import Event from './pages/event/index'
 import data from './data';
 
 function App() {
+    function handleMapClick(club) {
+        console.log(club)
+    }
+
     const marks = data.clubs.map(it => {
         return (
-            <Placemark key={it.name} geometry={[it.lat, it.lon]}/>
+            <Placemark onClick={() => handleMapClick(it)} key={it.id} geometry={[it.lat, it.lon]} properties={{hintContent: it.name}} />
         );
     });
 
@@ -25,12 +29,12 @@ function App() {
         <div className="App">
             <Row className="root-row">
                 <Col span={12}>
-                        <YMaps>
-                            <Map className="map" defaultState={{center: [59.93863, 30.31413], zoom: 9}}
-                                 defaultOptions={{autoFitToViewport: "always"}}>
-                                {marks}
-                            </Map>
-                        </YMaps>
+                    <YMaps>
+                        <Map className="map" defaultState={{center: [59.93863, 30.31413], zoom: 12}}
+                             defaultOptions={{autoFitToViewport: "always"}}>
+                            {marks}
+                        </Map>
+                    </YMaps>
                 </Col>
                 <Col span={12}>
                     <Router>
