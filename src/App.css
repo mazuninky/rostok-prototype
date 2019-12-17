@@ -5,9 +5,12 @@
 }
 
 .map{
+  /*top: 0;*/
   flex-grow: 1;
-  width: 100%;
+  width: 50%;
   height: 100%;
+  position: fixed;
+
 }
 
 .root-row{
