@@ -38,7 +38,12 @@ function App() {
                                 <Clubs clubs={data.clubs}/>
                             </Route>
                             <Route path="/event">
-                                <Event/>
+                                <Event
+                                    name={"Test"}
+                                    description={"Нискажу"}
+                                    data={"6.6.6666"}
+                                    isSubscribed={true}
+                                />
                             </Route>
                         </Switch>
                     </Router>
