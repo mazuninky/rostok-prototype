@@ -7,7 +7,9 @@ import "./club-card.css";
 //props.item.name - Имя клуба
 function ClubCard(props) {
     return (
-        <Card title={props.item.name}>Card content</Card>
+        <div className={"club-card"}>
+           <p>{props.item.name}</p>
+        </div>
     );
 }
 

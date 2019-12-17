@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import Clubs from './pages/clubs/index'
+import Club from './pages/club/index'
 import Event from './pages/event/index'
 
 import data from './data';
@@ -36,6 +37,12 @@ function App() {
                         <Switch>
                             <Route exact path="/" >
                                 <Clubs clubs={data.clubs}/>
+                            </Route>
+                            <Route path="/club">
+                                <Club
+                                    name={"Test"}
+                                    events={[{name: "Йога жепы", data: "17.12.19"}]}
+                                />
                             </Route>
                             <Route path="/event">
                                 <Event
