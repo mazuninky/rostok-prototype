@@ -18,7 +18,7 @@ function Clubs(props) {
             cover={
                 <img
                     alt="example"
-                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                    src={it.img}
                 />
             }
         >
@@ -52,8 +52,8 @@ function Clubs(props) {
     }
     return (
         <div>
-            <h1>Clubs</h1>
-            <div style={{padding: "30px"}}>
+            <h1 style={{marginTop: "16px"}}>Clubs</h1>
+            <div style={{padding: "16px 8px 16px 16px"}}>
                 {rows}
             </div>
         </div>
