@@ -27,11 +27,11 @@ function Event(props) {
 
     }
     return (
-        <div>
-            <Button onClick={goBack} type='danger' icon="close" style={{align: 'left'}}/>
-            <Title style={{align: 'left'}}>{props.name}</Title>
-            <Title style={{align: 'left'}}>{props.description}</Title>
-            <Button onClick={handleClick} disabled={props.isSubscribed} style={{align: 'left'}} type="primary">Записаться на занятие</Button>
+        <div style={{float: 'left', padding:20}}>
+            <Button onClick={goBack} type='danger' icon="close" />
+            <Title >{props.name}</Title>
+            <Title level={2}>{props.description}</Title>
+            <Button onClick={handleClick} disabled={props.isSubscribed} type="primary">Записаться на занятие</Button>
         </div>
     );
 }
