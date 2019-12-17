@@ -11,4 +11,4 @@ function Club(props) {
     );
 }
 
-export default Event;
+export default Club;
