@@ -40,15 +40,12 @@ function App() {
                     <Router>
                         <Switch>
                             <Route exact path="/">
-                                <Clubs clubs={data.clubs}/>
+                                <Clubs/>
                             </Route>
-                            <Route path="/club">
-                                <Club
-                                    name={"Test"}
-                                    events={[{name: "Йога жепы", data: "17.12.19"}]}
-                                />
+                            <Route path="/club/:id">
+                                <Club/>
                             </Route>
-                            <Route path="/event">
+                            <Route path="/event/:id">
                                 <Event
                                     name={"Test"}
                                     description={"Нискажу"}
