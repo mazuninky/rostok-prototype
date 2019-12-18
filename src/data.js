@@ -6,7 +6,7 @@ const data = {
         lon : 30.3093735,
         img: "https://moika78.ru/news2/2019/01/itmo.jpg",
         isSubscribe: false,
-        events: []
+        events: [{id: 0, name: "Йога жепы", day: 5, time: "18:00"}]
     }, {
         id: 1,
         name: "Hard ass",

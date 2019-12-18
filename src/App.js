@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col, Affix} from 'antd';
+import {Row, Col} from 'antd';
 import './App.css';
 import {YMaps, Map, Placemark} from 'react-yandex-maps';
 import {
@@ -34,7 +34,6 @@ class App extends React.Component {
             );
         });
 
-
         return (
             <div className="App">
                 <Row className="root-row">
@@ -51,10 +50,10 @@ class App extends React.Component {
                             <Route exact path="/">
                                 <Clubs handler={this.handleMapClick}/>
                             </Route>
-                            <Route path="/club/:id">
+                            <Route exact path="/club/:id">
                                 <Club/>
                             </Route>
-                            <Route path="/event/:id">
+                            <Route path="/club/:clubId/event/:eventId">
                                 <Event
                                     name={"Test"}
                                     description={"Нискажу"}
