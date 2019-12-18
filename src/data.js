@@ -6,7 +6,7 @@ const data = {
         lon : 30.3093735,
         img: "https://moika78.ru/news2/2019/01/itmo.jpg",
         isSubscribe: false,
-        events: [{id: 0, name: "Йога жепы", day: 5, time: "18:00"}]
+        events: [{id: 0, name: "Йога жепы", day: 5, time: "18:00", description: "Лучший массаж", isSubscribed: false}]
     }, {
         id: 1,
         name: "Hard ass",
@@ -43,6 +43,18 @@ export function findEventById(clubId, eventId) {
 
        return false;
     });
+}
+
+export function subscribeToEventById(clubId, eventId) {
+    let clubIndex = data.clubs.findIndex(it => {
+        return it.id == clubId;
+    });
+
+    let eventIndex = data.clubs[clubIndex].events.findIndex(it => {
+        return it.id == eventId;
+    });
+
+    data.clubs[clubIndex].events[eventIndex].isSubscribed = true
 }
 
 export default data;

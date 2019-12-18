@@ -53,14 +53,7 @@ class App extends React.Component {
                             <Route exact path="/club/:id">
                                 <Club/>
                             </Route>
-                            <Route path="/club/:clubId/event/:eventId">
-                                <Event
-                                    name={"Test"}
-                                    description={"Нискажу"}
-                                    data={"6.6.6666"}
-                                    isSubscribed={true}
-                                />
-                            </Route>
+                            <Route path="/club/:clubId/event/:eventId" render={(props) => <Event {...props} />}/>
                         </Switch>
                     </Col>
                 </Row>
