@@ -5,19 +5,16 @@ import {Card, Row, Col} from 'antd';
 import {
     withRouter
 } from 'react-router-dom';
-import {findAll, findClubById} from "../../data";
+import {findAll} from "../../data";
 
 const {Meta} = Card;
 
 //props.clubs - Список клубов
 function Clubs(props) {
-    function handleClick(club) {
-        props.history.push('/club/' + club.id)
-    }
     const data = findAll();
     const clubs = data.map(it => {
         return (<Card
-            onClick={() => handleClick(it)}
+            onClick={() => props.handler(it)}
             style={{cursor: 'pointer'}}
 
             cover={
