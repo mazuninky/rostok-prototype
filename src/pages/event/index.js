@@ -1,17 +1,8 @@
 import React from 'react';
-import antd from 'antd';
-import {
-    useParams
-} from "react-router-dom";
+import {Typography, Button, notification, Layout} from 'antd';
 import {findEventById, subscribeToEventById} from "../../data";
 
-const { Button } = antd;
-
-const { Typography } = antd;
-const { notification } = antd;
-
-
-const { Title } = Typography;
+const {Title, Paragraph} = Typography;
 
 class Event extends React.Component {
     constructor(props) {
@@ -30,23 +21,25 @@ class Event extends React.Component {
         this.setState({event});
         notification.open({
             message: 'Вы успешно записались на занятие',
-            description:
-                'Бла бла',
+            description: event.name,
         });
     }
 
     goBack(e) {
         e.preventDefault();
-        //todo implement
-
+        this.props.history.goBack()
     }
+
     render() {
         return (
-            <div style={{float: 'left', padding:20}}>
-                <Button onClick={this.goBack} type='danger' icon="close" />
-                <Title >{this.state.event.name}</Title>
-                <Title level={2}>{this.state.event.description}</Title>
-                <Button onClick={this.handleClick} disabled={this.state.event.isSubscribed} type="primary">Записаться на занятие</Button>
+            <div style={{padding: "20px"}}>
+                <Button className={"mb-4"} onClick={this.goBack} type='danger' icon="close"/>
+                <Typography className={"mb-4"}>
+                    <Title>{this.state.event.name}</Title>
+                    <Paragraph>{this.state.event.description}</Paragraph>
+                </Typography>
+                <Button onClick={this.handleClick} disabled={this.state.event.isSubscribed} type="primary">Записаться на
+                    занятие</Button>
             </div>
         );
     }

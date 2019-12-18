@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Card, Row, Col} from 'antd';
+import {Card, Row, Col, Typography} from 'antd';
 
 import {
     withRouter
@@ -8,6 +8,7 @@ import {
 import {findAll} from "../../data";
 
 const {Meta} = Card;
+const {Title} = Typography;
 
 //props.clubs - Список клубов
 function Clubs(props) {
@@ -54,7 +55,7 @@ function Clubs(props) {
     }
     return (
         <div>
-            <h1 style={{marginTop: "16px"}}>Клубы</h1>
+            <Title style={{marginTop: "16px", textAlign: "center"}}>Клубы</Title>
             <div style={{padding: "16px 8px 16px 16px"}}>
                 {rows}
             </div>
