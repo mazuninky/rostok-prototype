@@ -7,7 +7,7 @@ import {
     withRouter
 } from "react-router-dom";
 
-const {Typography, Calendar, Badge} = antd;
+const {Typography, Calendar, Badge, Tooltip} = antd;
 const {Title} = Typography;
 
 function Club(props) {
@@ -16,7 +16,7 @@ function Club(props) {
 
 
     function onEventClick(event) {
-        props.history.push("/info/club/"+ id + "/event/" + event.id);
+        props.history.push("/info/club/" + id + "/event/" + event.id);
     }
 
     function dateCellRender(value) {
@@ -27,7 +27,9 @@ function Club(props) {
             <ul className="events">
                 {listData.map(event => (
                     <li onClick={it => onEventClick(event)} key={event.name}>
-                        <Badge status='success' text={event.name} />
+                        <Tooltip title={event.name + " " + event.time}>
+                            <Badge status='success' text={event.name}/>
+                        </Tooltip>
                     </li>
                 ))}
             </ul>

@@ -1,12 +1,12 @@
 const data = {
     clubs: [{
         id: 0,
-        name: "Гей клуб",
+        name: "ОЛИМП",
         lat : 59.9565737389786,
         lon : 30.3093735,
-        img: "https://moika78.ru/news2/2019/01/itmo.jpg",
+        img: "https://sun9-47.userapi.com/c853628/v853628517/18cab5/S2BWd2sBbQU.jpg",
         isSubscribe: false,
-        events: [{id: 0, name: "Йога жепы", day: 5, time: "18:00", description: "Лучший массаж", isSubscribed: false}]
+        events: [{id: 0, name: "Робототехника", day: 5, time: "18:00", description: "Лучший массаж", isSubscribed: false}]
     }, {
         id: 1,
         name: "Hard ass",

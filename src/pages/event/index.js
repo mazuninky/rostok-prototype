@@ -1,6 +1,8 @@
 import React from 'react';
-import {Typography, Button, notification, Layout} from 'antd';
+import {Typography, Button, notification, Layout, Badge} from 'antd';
 import {findEventById, subscribeToEventById} from "../../data";
+
+import "./index.css"
 
 const {Title, Paragraph} = Typography;
 
@@ -35,10 +37,13 @@ class Event extends React.Component {
             <div style={{padding: "20px"}}>
                 <Button className={"mb-4"} onClick={this.goBack} type='danger' icon="close"/>
                 <Typography className={"mb-4"}>
-                    <Title>{this.state.event.name}</Title>
-                    <Paragraph>{this.state.event.description}</Paragraph>
+                    <Title className={"mb-1"}>{this.state.event.name}</Title>
+                    <div className="chip mb-4">
+                        {this.state.event.time}
+                    </div>
+                    <Paragraph className="mt-4">{this.state.event.description}</Paragraph>
                 </Typography>
-                <Button onClick={this.handleClick} disabled={this.state.event.isSubscribed} type="primary">Записаться на
+                <Button className="mt-4" onClick={this.handleClick} disabled={this.state.event.isSubscribed} type="primary">Записаться на
                     занятие</Button>
             </div>
         );
