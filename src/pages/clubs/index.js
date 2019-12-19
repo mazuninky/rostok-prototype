@@ -20,6 +20,7 @@ function Clubs(props) {
 
             cover={
                 <img
+                    style={{height: "150px"}}
                     alt="example"
                     src={it.img}
                 />

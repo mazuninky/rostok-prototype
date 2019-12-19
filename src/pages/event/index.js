@@ -41,7 +41,7 @@ class Event extends React.Component {
                     <div className="chip mb-4">
                         {this.state.event.time}
                     </div>
-                    <Paragraph className="mt-4">{this.state.event.description}</Paragraph>
+                    <Paragraph>{this.state.event.description}</Paragraph>
                 </Typography>
                 <Button className="mt-4" onClick={this.handleClick} disabled={this.state.event.isSubscribed} type="primary">Записаться на
                     занятие</Button>
