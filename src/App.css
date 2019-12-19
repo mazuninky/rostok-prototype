@@ -7,7 +7,7 @@
 .map{
   /*top: 0;*/
   flex-grow: 1;
-  width: 50%;
+  width: 37.5%;
   height: 100%;
   position: fixed;
 }

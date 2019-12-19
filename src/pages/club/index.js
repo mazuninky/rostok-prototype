@@ -16,7 +16,7 @@ function Club(props) {
 
 
     function onEventClick(event) {
-        props.history.push("/club/"+ id + "/event/" + event.id);
+        props.history.push("/info/club/"+ id + "/event/" + event.id);
     }
 
     function dateCellRender(value) {

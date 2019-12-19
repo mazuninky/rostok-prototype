@@ -17,11 +17,21 @@ import data from './data';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {mapState: { center: [59.93863, 30.31413], zoom: 12 }};
+        this.state = {mapState: {center: [59.93863, 30.31413], zoom: 12}};
         this.handleMapClick = this.handleMapClick.bind(this);
+
+        // this.props.history.listen((location, action) => {
+        //     // if (location.pathname.startsWith("/info/")) {
+        //     //     this.setState({mapIsVisible: false})
+        //     // } else {
+        //     //     this.setState({mapIsVisible: true})
+        //     // }
+        //     console.log(`The current URL is ${location.pathname}`);
+        //     console.log(`The last navigation action was ${action}`);
+        // })
     }
 
-     handleMapClick(club) {
+    handleMapClick(club) {
         this.props.history.push("/club/" + club.id);
         this.setState({mapState: {center: [club.lat, club.lon], zoom: 16}});
     }
@@ -37,15 +47,20 @@ class App extends React.Component {
         return (
             <div className="App">
                 <Row className="root-row">
-                    <Col span={12}>
+                    <Switch>
+                        <Route exact path={["/club/:id", "/"]}>
+                    <Col span={9}>
                         <YMaps>
-                            <Map className="map" state={this.state.mapState} defaultState={{center: [59.93863, 30.31413], zoom: 12}}
+                            <Map className="map" state={this.state.mapState}
+                                 defaultState={{center: [59.93863, 30.31413], zoom: 12}}
                                  defaultOptions={{autoFitToViewport: "always"}}>
                                 {marks}
                             </Map>
                         </YMaps>
                     </Col>
-                    <Col span={12}>
+                        </Route>
+                    </Switch>
+                    <Col span={15}>
                         <Switch>
                             <Route exact path="/">
                                 <Clubs handler={this.handleMapClick}/>
@@ -53,7 +68,7 @@ class App extends React.Component {
                             <Route exact path="/club/:id">
                                 <Club/>
                             </Route>
-                            <Route path="/club/:clubId/event/:eventId" render={(props) => <Event {...props} />}/>
+                            <Route path="/info/club/:clubId/event/:eventId" render={(props) => <Event {...props} />}/>
                         </Switch>
                     </Col>
                 </Row>
